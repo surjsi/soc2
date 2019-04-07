@@ -1,0 +1,10 @@
+name: My Company
+filePrefix: MyCo
+tickets:
+  jira:
+    password: Kss9877!
+    project: TEST
+    taskType: Task
+    url: https://misna.atlassian.net
+    username: surjit.konjengbam.work@gmail.com
+approvedBranch: ""

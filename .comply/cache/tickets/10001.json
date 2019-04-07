@@ -1,0 +1,13 @@
+{
+	"ID": "10001",
+	"Name": "test User",
+	"State": "open",
+	"Body": "\n\nResolve this ticket by executing the following steps:\n1. test user\n\n\n\n---\nProcedure-ID: test",
+	"Attributes": {
+		"comply": true,
+		"comply-procedure": true
+	},
+	"ClosedAt": null,
+	"CreatedAt": "2019-04-06T14:19:50.884-04:00",
+	"UpdatedAt": null
+}
