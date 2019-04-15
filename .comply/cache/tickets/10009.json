@@ -1,0 +1,13 @@
+{
+	"ID": "10009",
+	"Name": "Collect Workstation Details",
+	"State": "open",
+	"Body": "\n\nResolve this ticket by executing the following steps:\n\n- [ ] Send the communications below\n- [ ] For any email replies, attach content to this ticket\n- [ ] Validate responses are received from each\n\n\n```\nTo: Desktop support\nSubject: Annual workstation inventory\n\nPlease attach the current workstation inventory to the following ticket: [REPLACE WITH URL TO THIS TICKET]\n\nThe workstation inventory shall include the following fields:\n    * Serial number\n    * Custodian\n    * Full disk encryption status\n    * Malware protection status\n```\n\n\n```\nTo: Outsourced Call Center IT\nSubject: Annual workstation inventory\n\nAs part of our ongoing compliance efforts and per our services agreement, we require a current inventory of workstations in use in the service of our account.\n\nPlease respond to this message with the current inventory.\n\nThe workstation inventory shall include the following fields:\n    * Serial number\n    * Custodian\n    * Full disk encryption status\n    * Malware protection status\n```\n\n\n---\nProcedure-ID: workstation",
+	"Attributes": {
+		"comply": true,
+		"comply-procedure": true
+	},
+	"ClosedAt": null,
+	"CreatedAt": "2019-04-13T10:48:39.007-04:00",
+	"UpdatedAt": null
+}

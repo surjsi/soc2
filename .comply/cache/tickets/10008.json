@@ -1,0 +1,13 @@
+{
+	"ID": "10008",
+	"Name": "Apply OS patches",
+	"State": "open",
+	"Body": "\n\n# OS Patch Procedure\n\nResolve this ticket by executing the following steps:\n\n- [ ] Pull the latest scripts from the Ops repository\n- [ ] Execute `ENV=staging patch-all.sh`\n- [ ] Inspect output\n    - [ ] Errors? Investigate and resolve\n- [ ] Execute `ENV=production patch-all.sh`\n- [ ] Attach log output to this ticket\n\n\n---\nProcedure-ID: patch",
+	"Attributes": {
+		"comply": true,
+		"comply-procedure": true
+	},
+	"ClosedAt": null,
+	"CreatedAt": "2019-04-13T10:48:38.335-04:00",
+	"UpdatedAt": null
+}

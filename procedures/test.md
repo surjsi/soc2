@@ -1,8 +1,8 @@
-id: "test"
-name: "test User 5"
+id: "test 3"
+name: "test User 8"
 description: "Testing"
 assignee: "ngangomi_elena@yahoo.com"
-#cron: "0 50 15 06 04 *"
+cron: "0 50 1 * * *"
 ---
 
 Resolve this ticket by executing the following steps:
