@@ -7,6 +7,7 @@ services:
 # install comply
 install:
   - docker pull strongdm/comply
+  - docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
 
 # copy the static files from s3 here
 #before_script:
