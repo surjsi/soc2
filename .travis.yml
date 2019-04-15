@@ -20,6 +20,7 @@ install:
 script:
 #  - comply scheduler
 #  - comply build
+  - echo "$TRAVIS_COMMIT_RANGE"
   - if [ "$TRAVIS_EVENT_TYPE" == "push" ]; 
     then comply scheduler; 
     else comply build;
