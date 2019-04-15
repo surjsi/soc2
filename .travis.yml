@@ -1,5 +1,5 @@
 #os: osx
-#language: go
+language: go
 
 # user docker services
 #services:
@@ -9,7 +9,6 @@
 install:
   - go get github.com/strongdm/comply
 #  - docker pull strongdm/comply
-#  - docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
 
 # copy the static files from s3 here
 #before_script:
@@ -19,12 +18,12 @@ install:
 # if TRAVIS_EVENT is a cron, run the scheduler so that tickets are created.
 # else then the event is a push/pull request event from github, so just perform a comply build
 script:
-  - comply scheduler
-  - comply build
-#  - if [ "$TRAVIS_EVENT_TYPE" == "cron" ]; 
-#    then comply scheduler; 
-#    else comply build;
-#    fi
+#  - comply scheduler
+#  - comply build
+  - if [ "$TRAVIS_EVENT_TYPE" == "push" ]; 
+    then comply scheduler; 
+    else comply build;
+    fi
 
 # if TRAVIS_EVENT is a cron, copy the state files to s3 bucket
 # else copy the output directory files to s3 bucket
