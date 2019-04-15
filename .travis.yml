@@ -1,5 +1,5 @@
 #os: osx
-language: go
+#language: go
 
 # user docker services
 #services:
