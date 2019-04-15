@@ -1,13 +1,15 @@
 #os: osx
+language: go
 
 # user docker services
-services:
-  - docker
+#services:
+#  - docker
 
 # install comply
 install:
-  - docker pull strongdm/comply
-  - docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
+  - go get github.com/strongdm/comply
+#  - docker pull strongdm/comply
+#  - docker run --rm -v "$PWD":/source -p 4000:4000 -it strongdm/comply
 
 # copy the static files from s3 here
 #before_script:
