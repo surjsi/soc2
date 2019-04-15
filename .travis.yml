@@ -2,7 +2,8 @@
 language: go
 
 env:
-  - CHANGED_FILES=( $(git diff --name-only $TRAVIS_COMMIT_RANGE) )
+  - CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE))
+
 # user docker services
 #services:
 #  - docker
@@ -23,7 +24,7 @@ script:
 #  - comply scheduler
 #  - comply build
 #  - CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE))
-  - echo "$CHANGED_FILES"
+  - echo -e "$CHANGED_FILES"
   - if [ "$TRAVIS_EVENT_TYPE" == "push" ]; 
     then comply scheduler; 
     else comply build;
