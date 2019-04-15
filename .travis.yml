@@ -14,8 +14,8 @@ install:
 #  - docker pull strongdm/comply
 
 # copy the static files from s3 here
-#before_script:
-#  - copy the static files from s3 here
+before_script:
+  - go run go_src/main.go 
 
 # check if bash is required or not
 # if TRAVIS_EVENT is a cron, run the scheduler so that tickets are created.
