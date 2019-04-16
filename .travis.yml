@@ -1,6 +1,6 @@
-#os: osx
 language: go
 
+# get filnames of all committed files to git
 env:
   - CHANGED_FILES="$(git diff --name-only $TRAVIS_COMMIT_RANGE)"
 
@@ -11,12 +11,17 @@ env:
 # install comply
 install:
   - go get github.com/strongdm/comply
-#  - docker pull strongdm/comply
 
-# copy the static files from s3 here
-before_script: ./scripts/run_proc.sh
+# for on-demand procedure files, 
+# Note: 'on-demand' will get executed only on push/pull request events
+# execute the script:
+#    - it will  parse the file and 
+#    - run 'comply proc <procedure_id>'
+before_script: 
+  - if [ "$TRAVIS_EVENT_TYPE" != "cron" ];
+    then ./scripts/run_proc.sh;
+    fi
 
-# check if bash is required or not
 # if TRAVIS_EVENT is a cron, run the scheduler so that tickets are created.
 # else then the event is a push/pull request event from github, so just perform a comply build
 script:
@@ -27,21 +32,23 @@ script:
 
 # if TRAVIS_EVENT is a cron, copy the state files to s3 bucket
 # else copy the output directory files to s3 bucket
+# *********The push commands can be executed here**********
 #before_deploy:
 #  - copy static files to s3
 
 
-#deploy:
-#  - skip_cleanup: true
-
 # prevent Travis from resetting the working dir and deleting all changes made during the build with the skip_cleanup flag
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID 
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: "surjitsoc2"
-    local_dir: output
-    skip_cleanup: true
+  - skip_cleanup: true
+
+# prevent Travis from resetting the working dir and deleting all changes made during the build with the skip_cleanup flag
+#deploy:
+#  - provider: s3
+#    access_key_id: $AWS_ACCESS_KEY_ID 
+#    secret_access_key: $AWS_SECRET_ACCESS_KEY
+#    bucket: "surjitsoc2"
+#    local_dir: output
+#    skip_cleanup: true
 #  - provider: s3
 #    access_key_id: "YOUR AWS ACCESS KEY"
 #    secret_access_key: "YOUR AWS SECRET KEY"

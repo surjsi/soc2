@@ -1,5 +1,6 @@
 #!/bin/bash
 #set -ev
+
 #export CHANGED_FILES="procedures/test2.md procedures/test3.md"
 echo "$CHANGED_FILES"
 
@@ -13,11 +14,10 @@ do
       CRON=`grep -ri "^cron" $fname`
       
       if [[ ! -z $INDEX && -z $CRON ]];then
-	echo "Valid"
 	indxVal=`grep "^id:" $fname | cut -d ":" -f 2`
-	echo $indxVal
         VAL=`echo $indxVal|sed 's/"//g'`
-	echo $VAL
+	echo "       procedure ID is: $VAL"
+        comply proc $VAL
       fi
     fi 
   fi
