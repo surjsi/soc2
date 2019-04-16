@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -ev
-export CHANGED_FILES="procedures/test2.md procedures/test3.md"
+#export CHANGED_FILES="procedures/test2.md procedures/test3.md"
 echo "$CHANGED_FILES"
 
 for fname in `echo $CHANGED_FILES`

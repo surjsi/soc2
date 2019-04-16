@@ -1,5 +1,5 @@
 id: "test 3"
-name: "test User 16"
+name: "test Users 16"
 description: "Testing"
 assignee: "ngangomi_elena@yahoo.com"
 ---
