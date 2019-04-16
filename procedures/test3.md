@@ -1,5 +1,5 @@
 id: "test 3"
-name: "test Useer 11"
+name: "test User 11"
 description: "Testing"
 assignee: "ngangomi_elena@yahoo.com"
 cron: "0 50 1 * * *"
