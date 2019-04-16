@@ -6,8 +6,8 @@ echo "$CHANGED_FILES"
 for fname in "$CHANGED_FILES"
 do
   echo "File name is : $fname"
-
-  if [ `grep "procedure" $fname ` ]; then
+  if echo "$fname" | grep -q "procedures"`; then
+ # if [ `grep "procedure" $fname ` ]; then
     
     for fle in `grep -l "^index:" $fname `
     do
