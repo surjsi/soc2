@@ -17,7 +17,7 @@ do
 	indxVal=`grep "^id:" $fname | cut -d ":" -f 2`
         VAL=`echo $indxVal|sed 's/"//g'`
 	echo "       procedure ID is: $VAL"
-        #comply proc $VAL
+        comply proc $VAL
       fi
     fi 
   fi
