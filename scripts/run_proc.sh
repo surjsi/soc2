@@ -3,17 +3,26 @@ set -ev
 
 echo "$CHANGED_FILES"
 
-echo "test 1 starts"
-
 for fname in "$CHANGED_FILES"
 do
-  if grep -q "cron:" "$fname"; then
-    echo "$fname is a cron file"
-  fi 
+  echo "File name is : $fname"
+
+  if [ `grep "procedure" $fname ` ]; then
+    
+    for fle in `grep -l "^index:" $fname `
+    do
+      echo "File having index: $fle "
+
+      if [ `grep "^cron" $fle | wc -l` -eq 0 ]; then
+        indxVal = `grep "^index:" $fle| cut -d":" -f 2`
+        echo $indxVal
+        indxVal=${indxVal#*'"'}; indxVal=${s%'"'*}
+        echo "value after stripped quptes $indxVal"
+      fi
+    
+    done
+  
+  fi
+
 done
 
-echo "testing 2 starts"
-
-if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
-  echo "test success"
-fi
