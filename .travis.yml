@@ -17,7 +17,9 @@ install:
 # execute the script:
 #    - it will  parse the file and 
 #    - run 'comply proc <procedure_id>'
-before_script: 
+before_script:
+  - sed -i "s/JIRA_USERNAME/$COMPLY_JIRA_USERNAME/g" comply.yml
+  - sed -i "s/JIRA_PASSWORD/$COMPLY_JIRA_PASSWORD/g" comply.yml
   - if [ "$TRAVIS_EVENT_TYPE" != "cron" ];
     then ./scripts/run_proc.sh;
     fi
