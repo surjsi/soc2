@@ -16,6 +16,15 @@ html lang=en
           el.innerHTML = prettyCron.toString((""+el.innerHTML).trim(),true) // 6-field expressions
         })
       })
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
 
       function show(name) {
         if (history.replaceState) {
