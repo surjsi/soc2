@@ -2,9 +2,6 @@
   command = "./build-netlify.sh"
   publish = "output"
 
-[template.environment]
-  GITHUB_TOKEN = 
-
 [[headers]]
   for = "/*"
   [headers.values]
